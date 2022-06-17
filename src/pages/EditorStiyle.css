@@ -1,0 +1,9 @@
+.wmde-markdown, .w-md-editor-text, .w-md-editor-content, .w-md-editor-show-live {
+    height: 100vh !important;
+    background: #0d1117;
+}
+
+html {
+    background: #0d1117 !important;
+}
+
