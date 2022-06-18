@@ -2,11 +2,9 @@
 import axios from "axios"
 import Article from "../models/article"
 
-const env = process.env.ENV || 'DEV'
-
-const baseUrl = env == 'DEV' ?
-    'http://localhost:5000' :
-    'https://dontpad-backend-production.up.railway.app'
+const baseUrl = process.env.NODE_ENV == 'production' ?
+    'https://dontpad-backend-production.up.railway.app':
+    'http://localhost:5000'
   
 export async function onLoad (articleUrl: string): Promise<Article | null> {
     const response = await axios.get<Article>(`${baseUrl}/articles/MD-${articleUrl}`)
